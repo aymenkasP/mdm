@@ -10,7 +10,6 @@ export default async function page({
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  console.log("🚀 ~ file: page.tsx:10 ~ searchParams:", searchParams);
 
   const url = `http://webcache.googleusercontent.com/search?q=cache:${searchParams.q}`;
 
@@ -19,10 +18,7 @@ export default async function page({
 
   return (
     <>
-      <div className="content">
-        {parse(data)}
-      </div>
-      ;
+      <div className="content">{parse(data)}</div>;
     </>
   );
 }
